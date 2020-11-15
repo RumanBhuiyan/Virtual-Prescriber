@@ -33,6 +33,7 @@ class MySplashScreen extends StatelessWidget {
   }
 }
 
+//hudai adding this line
 // Some flutter packages for loading animation
 // 1.https://pub.dev/packages/circular_custom_loader
 // 2.https://pub.dev/packages/progress_state_button
