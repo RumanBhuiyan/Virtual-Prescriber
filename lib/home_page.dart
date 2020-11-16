@@ -21,18 +21,20 @@ class _HomePageState extends State<HomePage> {
               end: Alignment.bottomRight,
             ),
           ),
-          child: Column(
-            children: [
-              SizedBox(
-                height: 20,
-              ),
-              MyAnalogClock(),
-              SizedBox(
-                height: 10,
-              ),
-              LoginRegisterForm(),
-            ],
-          ),
+          child: ListView(children: [
+            Column(
+              children: [
+                SizedBox(
+                  height: 20,
+                ),
+                MyAnalogClock(),
+                SizedBox(
+                  height: 10,
+                ),
+                LoginRegisterForm(),
+              ],
+            ),
+          ]),
         ),
       ),
     );
