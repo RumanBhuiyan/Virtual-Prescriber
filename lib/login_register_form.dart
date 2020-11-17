@@ -8,6 +8,9 @@ class LoginRegisterForm extends StatefulWidget {
 }
 
 class _LoginRegisterFormState extends State<LoginRegisterForm> {
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return FadeIn(
@@ -49,6 +52,7 @@ class _LoginRegisterFormState extends State<LoginRegisterForm> {
                 right: 30,
               ),
               child: TextField(
+                controller: emailController,
                 decoration: InputDecoration(
                   prefixIcon: Padding(
                     padding: EdgeInsets.symmetric(horizontal: 20),
@@ -85,6 +89,7 @@ class _LoginRegisterFormState extends State<LoginRegisterForm> {
                 right: 30,
               ),
               child: TextField(
+                controller: passwordController,
                 decoration: InputDecoration(
                   prefixIcon: Padding(
                     padding: EdgeInsets.symmetric(horizontal: 20),
@@ -108,6 +113,82 @@ class _LoginRegisterFormState extends State<LoginRegisterForm> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                RaisedButton(
+                  onPressed: () {
+                    print(
+                        'Email : ${emailController.text} Password: ${passwordController.text}');
+                  },
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(80.0)),
+                  padding: const EdgeInsets.all(0.0),
+                  child: Ink(
+                    decoration: const BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: [Color(0xffc31432), Color(0xff240b36)],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      ),
+                      borderRadius: BorderRadius.all(Radius.circular(80.0)),
+                    ),
+                    child: Container(
+                      constraints: const BoxConstraints(
+                          minWidth: 130.0,
+                          minHeight: 36.0), // min sizes for Material buttons
+                      alignment: Alignment.center,
+                      child: const Text(
+                        'Register',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ),
+                ),
+                RaisedButton(
+                  onPressed: () {
+                    print(
+                        'Email : ${emailController.text} Password: ${passwordController.text}');
+                  },
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(80.0)),
+                  padding: const EdgeInsets.all(0.0),
+                  child: Ink(
+                    decoration: const BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: [Color(0xffc31432), Color(0xff240b36)],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      ),
+                      borderRadius: BorderRadius.all(Radius.circular(80.0)),
+                    ),
+                    child: Container(
+                      constraints: const BoxConstraints(
+                          minWidth: 130.0,
+                          minHeight: 36.0), // min sizes for Material buttons
+                      alignment: Alignment.center,
+                      child: const Text(
+                        'Login',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ),
+                )
+              ],
             ),
           ],
         ),
