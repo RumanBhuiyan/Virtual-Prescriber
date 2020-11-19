@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_fadein/flutter_fadein.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
 
 class LoginRegisterForm extends StatefulWidget {
   @override
@@ -42,6 +43,22 @@ class _LoginRegisterFormState extends State<LoginRegisterForm> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            SizedBox(
+              width: 250.0,
+              child: TypewriterAnimatedTextKit(
+                repeatForever: true,
+                speed: Duration(milliseconds: 300),
+                text: [
+                  "Login First",
+                ],
+                textStyle: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 35.0,
+                    color: Colors.black),
+                textAlign: TextAlign.center,
+                alignment: AlignmentDirectional.topEnd, // or Alignment.topLeft
+              ),
+            ),
             Container(
               decoration: BoxDecoration(
                 color: Color(0xff11998e),
