@@ -11,8 +11,8 @@ class LoginRegisterForm extends StatefulWidget {
 }
 
 class _LoginRegisterFormState extends State<LoginRegisterForm> {
-  String emailValue;
-  String passwordValue;
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -62,43 +62,43 @@ class _LoginRegisterFormState extends State<LoginRegisterForm> {
               ),
             ),
             Container(
-              decoration: BoxDecoration(
-                color: Color(0xff11998e),
-                borderRadius: BorderRadius.all(Radius.circular(25.7)),
-              ),
-              margin: EdgeInsets.only(
-                left: 30,
-                right: 30,
-              ),
-              child: TextField(
-                onChanged: (value) {
-                  setState(() {
-                    emailValue = value;
-                  });
-                },
-                decoration: InputDecoration(
-                  prefixIcon: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 20),
-                    child: FaIcon(
-                      FontAwesomeIcons.peopleArrows,
-                      color: Colors.white,
-                      size: 40,
+                decoration: BoxDecoration(
+                  color: Color(0xff11998e),
+                  borderRadius: BorderRadius.all(Radius.circular(25.7)),
+                ),
+                margin: EdgeInsets.only(
+                  left: 30,
+                  right: 30,
+                ),
+                child: TextField(
+                  controller: emailController,
+                  onChanged: (value) {
+                    //whenever textfield value get changed rebuild widgets
+                    //that uses its value or notify them about changes
+                    setState(() {});
+                  },
+                  decoration: InputDecoration(
+                    prefixIcon: Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      child: FaIcon(
+                        FontAwesomeIcons.peopleArrows,
+                        color: Colors.white,
+                        size: 40,
+                      ),
+                    ),
+                    border: InputBorder.none,
+                    hintText: 'Enter Your Gmail',
+                    hintStyle: TextStyle(
+                      color: Colors.black.withOpacity(0.3),
                     ),
                   ),
-                  border: InputBorder.none,
-                  hintText: 'Enter Your email',
-                  hintStyle: TextStyle(
-                    color: Colors.black.withOpacity(0.3),
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 25,
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
                   ),
-                ),
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 25,
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
+                )),
             SizedBox(
               height: 10,
             ),
@@ -112,10 +112,12 @@ class _LoginRegisterFormState extends State<LoginRegisterForm> {
                 right: 30,
               ),
               child: TextField(
+                obscureText: true,
+                controller: passwordController,
                 onChanged: (value) {
-                  setState(() {
-                    passwordValue = value;
-                  });
+                  //whenever textfield value get changed rebuild widgets
+                  //that uses its value or notify them about changes
+                  setState(() {});
                 },
                 decoration: InputDecoration(
                   prefixIcon: Padding(
@@ -133,7 +135,6 @@ class _LoginRegisterFormState extends State<LoginRegisterForm> {
                   ),
                 ),
                 textAlign: TextAlign.center,
-                obscureText: true,
                 style: TextStyle(
                   fontSize: 25,
                   color: Colors.black,
@@ -149,13 +150,13 @@ class _LoginRegisterFormState extends State<LoginRegisterForm> {
               children: [
                 MyCustomButton(
                   buttonName: 'Register',
-                  email: emailValue,
-                  password: passwordValue,
+                  email: emailController.text,
+                  password: passwordController.text,
                 ),
                 MyCustomButton(
                   buttonName: 'Login',
-                  email: emailValue,
-                  password: passwordValue,
+                  email: emailController.text,
+                  password: passwordController.text,
                 ),
               ],
             ),
