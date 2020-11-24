@@ -71,6 +71,7 @@ class _LoginRegisterFormState extends State<LoginRegisterForm> {
                   right: 30,
                 ),
                 child: TextField(
+                  keyboardType: TextInputType.emailAddress,
                   controller: emailController,
                   onChanged: (value) {
                     //whenever textfield value get changed rebuild widgets

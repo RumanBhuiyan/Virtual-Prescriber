@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "287649368211",
+    "firebase_url": "https://virtual-prescriber-99e19.firebaseio.com",
+    "project_id": "virtual-prescriber-99e19",
+    "storage_bucket": "virtual-prescriber-99e19.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:287649368211:android:fdc80e403abc59cc7f2566",
+        "android_client_info": {
+          "package_name": "com.virtualprescriber"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "287649368211-4qrp1uudj4kd89mjnh7spqg2311bg3hq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHdzETnIxuFlsUHQayFOdWlqw5GEag4yI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "287649368211-4qrp1uudj4kd89mjnh7spqg2311bg3hq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
